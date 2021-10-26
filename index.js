@@ -17,9 +17,7 @@ app.use(
 app.use(bodyParser.json());
 
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something broke!");
+
 });
 
 let movies = [
@@ -270,9 +268,7 @@ app.get("/users/:username/favorites", (req, res) => {
 
 app.use(express.static("public"));
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something broke!");
+
 });
 
 const PORT=8080;
