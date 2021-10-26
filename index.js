@@ -270,13 +270,13 @@ app.use(express.static("public"));
 
 
 });
+// Error handler
+app.use((err, req, res, next) => {
+  console.log(err.stack);
+  res.status(500).send('Something gone wrong mate!');
+});
 
-const PORT=8080;
-
-
-
-//Lets start our server
-app.listen(PORT, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://localhost:%s", PORT);
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0', () => {
+  console.log('Listening on Port ' + port);
 });
