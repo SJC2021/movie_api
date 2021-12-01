@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 
 
-});
+
 
 let movies = [
     {
@@ -269,7 +269,7 @@ app.get("/users/:username/favorites", (req, res) => {
 app.use(express.static("public"));
 
 
-});
+
 // Error handler
 app.use((err, req, res, next) => {
   console.log(err.stack);
